@@ -11,23 +11,32 @@ function page_getProperties () {
   return copy
 }
 
-function update(){
-  chrome.devtools.inspectedWindow.eval(
-    '(' + page_getProperties.toString() + ')()',
-    (result, isError)=>{
-      const {text} = result
-      root.innerHTML = text
-      ? '<pre>'+ escapeHTML(text) +'</pre>'
-      : tips
-    }
-  )
+function render (result, isError) {
+  const {text} = result
+  if(!text) return root.innerHTML = tips
+  root.innerHTML = '<textarea id="code"></textarea>'
+  const code = document.getElementById('code')
+  code.innerHTML = text
+  myCodeMirror = CodeMirror.fromTextArea(code, {
+    lineWrapping: true
+  })
 }
 
+
+function update(){
+  if(typeof chrome!='undefined' && chrome.devtools)
+    chrome.devtools.inspectedWindow.eval(
+      '(' + page_getProperties.toString() + ')()',
+      render
+    )
+  else render({text:'p {color: red;}'})
+}
+
+var myCodeMirror
 const root = document.getElementById('container')
 const button = document.getElementById('button')
 const tips = root.innerHTML
 
 update()
-
 button.onclick = update
 
