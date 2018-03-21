@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf8">
     <style>
+        html,body{
+            height: 100%;
+        }
         #container {
             line-height: 1.2;
             font-size: 1rem;
@@ -12,9 +15,14 @@
           top: 10px;
           left: 10px;
           opacity: 0.5;
+          height: 30px;
         }
         pre{
           margin-top: 0;
+        }
+        div.CodeMirror, textarea {
+            /* width: 100vw; */
+            height: calc(100vh - 50px)
         }
     </style>
 </head>

@@ -4,7 +4,7 @@ function escapeHTML(html){
 }
 
 function page_getProperties () {
-  var showcss=function(){function e(e){return function(s){'string'==typeof s&&(s=document.getElementById(s)),'object'==typeof s&&s&&s.cssdom&&(s=s.cssdom),s||(s=$0);var t=s.sheet||s.styleSheet;if(t && t.cssText)return t.cssText;if(t)for(var n='',o=t.cssRules||t.rules,r=0,c=o.length;r<c;r++)n+=o[r].cssText+'\n';return e?e(n):console.log(n)}}return e}();
+  var showcss=function(){function e(e){return function(s){'string'==typeof s&&(s=document.getElementById(s)),'object'==typeof s&&s&&s.cssdom&&(s=s.cssdom),s||(s=$0);var t=s.sheet||s.styleSheet;if(t.cssText)return t.cssText;for(var n='',o=t.cssRules||t.rules,r=0,c=o.length;r<c;r++)n+=o[r].cssText+'\n';return e?e(n):console.log(n)}}return e}();
   var copy = { __proto__: null }
   if($0 && $0.tagName=='STYLE')
     showcss(css=>copy.text = css)($0)
