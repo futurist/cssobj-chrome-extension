@@ -1,0 +1,7 @@
+{
+  "name": "CSSObj Check Stylesheet Code",
+  "version": "1.0.0",
+  "description": "For cssobj in chrome extension, Add a sidebar that displays the stylesheet text associated with the selected style element.",
+  "devtools_page": "main.html",
+  "manifest_version": 2
+}
