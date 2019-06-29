@@ -1,0 +1,24 @@
+{
+  "name": "cssobj-chrome-extension",
+  "version": "1.0.0",
+  "private": true,
+  "description": "For cssobj in chrome extension, Add a sidebar that displays the stylesheet text associated with the selected style element.",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/futurist/cssobj-chrome-extension.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/futurist/cssobj-chrome-extension/issues"
+  },
+  "homepage": "https://github.com/futurist/cssobj-chrome-extension#readme"
+}

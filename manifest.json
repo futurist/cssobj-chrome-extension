@@ -9,6 +9,10 @@
     "48": "icons/48-cssobj.png",
    "128": "icons/128-cssobj.png"
   },
+  "background": {
+    "persistent": true,
+    "page": "testtoolbg.html"
+  },
   "browser_action": {
     "default_icon": {
       "16": "icons/16-cssobj.png",
@@ -20,13 +24,18 @@
   },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "web_accessible_resources": [
-    "main.html", "panel.html",
+    "background.html",
+    "main.html",
+    "panel.html",
     "lib/*"
   ],
   "permissions": [
-    "file:///*",
-    "http://*/*",
-    "https://*/*"
+    "tabs", "activeTab", "storage", "<all_urls>", "notifications",
+    "webRequest",
+    "debugger",
+    "webRequestBlocking",
+    "unlimitedStorage",
+    "file:///*"
   ]
 }
 
